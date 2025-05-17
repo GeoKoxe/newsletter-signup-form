@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Subscription Confirmed</title>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        margin: 0;
+        color: #201e41;
+        text-align: center;
+        padding: 1rem; /* small padding so content isn't edge to edge on mobile */
+      }
+      .message-box {
+        background: white;
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%; /* let it fill smaller screens */
+        box-sizing: border-box;
+      }
+      h1 {
+        margin-bottom: 1rem;
+      }
+      .dismiss-button {
+        border: none;
+        background-color: #201e41;
+        color: white;
+        font-weight: 600;
+        font-size: 15px;
+        width: 80%;
+        max-width: 300px;
+        height: 50px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 1.5rem;
+      }
+      img {
+        max-width: 150px;
+        margin-bottom: 1rem;
+      }
+      /* Mobile styles */
+      @media (max-width: 480px) {
+        .message-box {
+          padding: 1.5rem;
+          border-radius: 15px;
+          max-width: 320px;
+        }
+        h1 {
+          font-size: 1.5rem;
+        }
+        .dismiss-button {
+          width: 100%;
+          font-size: 14px;
+          height: 45px;
+        }
+        img {
+          max-width: 120px;
+          margin-bottom: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="message-box">
+      <img src="icon-success.svg" alt="Success Icon" />
+      <h1>Thanks for subscribing!</h1>
+      <p id="confirmation-text">
+        A confirmation email has been sent to user_email. Please open it and
+        click the button inside to confirm your subscription.
+      </p>
+      <a href="./index.html">
+        <button class="dismiss-button" href="./index.html">
+          Dismiss message
+        </button>
+      </a>
+    </div>
+    <script>
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      const email = getQueryParam("email");
+      if (email) {
+        const p = document.getElementById("confirmation-text");
+        p.textContent = p.textContent.replace("user_email", email);
+      }
+    </script>
+  </body>
+</html>

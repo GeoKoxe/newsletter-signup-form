@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  color: #353535;
+  font-weight: 500;
+  background-color: #f0f0f0;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+}
+
+.second-container {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 900px;
+  width: 100%;
+}
+
+.left-container {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 30px;
+}
+
+.title-text {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.description-text {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.right-container {
+  width: 400px;
+}
+
+.checkboxes {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.checkboxes li {
+  margin: 10px 0;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.checkboxes li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.email-prompt {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.subscription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+#newsletter-email {
+  border: 1px solid rgb(189, 189, 189);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  font-size: 15px;
+}
+
+#sub-button {
+  border: none;
+  background-color: #201e41;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#newsletter-message {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.desktop-image {
+  display: block !important;
+}
+
+.mobile-image {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .second-container {
+    position: absolute;
+    flex-direction: column-reverse;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .left-container,
+  .right-container {
+    width: 100%;
+    height: auto;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .right-container img {
+    width: 100%;
+    display: block;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .desktop-image {
+    display: none !important;
+  }
+
+  .mobile-image {
+    display: block;
+  }
+
+  .left-container {
+    text-align: left;
+  }
+
+  .title-text {
+    font-size: 28px;
+  }
+}
